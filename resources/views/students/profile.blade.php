@@ -18,42 +18,42 @@
                 <div class="form-group">
                     <label for="user-id">ID</label>
                     <div type="text" class="well well-sm" id="user-id" name="uid"
-                    >{{ Auth::id() }}
+                    >{{ $user->id }}
                     </div>
                 </div>
                 <!-- 姓名 -->
                 <div class="form-group">
                     <label for="name">姓名</label>
-                    <div type="text" class="well well-sm" id="name" name="name"
-                    >{{ Auth::user()->getInfo('name') }}
+                    <div type="text" class="well well-sm" id="name" name="name">
+                        {{ $user->name }}
                     </div>
                 </div>
                 <!-- 性别 -->
                 <div class="form-group">
                     <label for="select">性别</label>
                     <div type="text" class="well well-sm" id="gender" name="gender">
-                        {{ Auth::user()->getInfo('gender') == 'm' ? '男' : '女' }}
+                        {{ $user->gender == 'm' ? '男' : '女' }}
                     </div>
                 </div>
                 <!-- 学院 -->
                 <div class="form-group">
                     <label for="college">学院</label>
                     <div type="text" class="well well-sm" id="college" name="college-name">
-                        {{ Auth::user()->getInfo('college_name') }}
+                        {{ $user->college_name }}
                     </div>
                 </div>
                 <!-- 专业 -->
                 <div class="form-group">
                     <label for="major">专业</label>
                     <div type="text" class="well well-sm" id="major" name="major-name">
-                        {{ Auth::user()->getInfo('major_name') }}
+                        {{ $user->major_name }}
                     </div>
                 </div>
                 <!-- 班级 -->
                 <div class="form-group">
                     <label for="class">班级</label>
                     <div type="text" class="well well-sm" id="class" name="class-name">
-                        {{ Auth::user()->getInfo('class_name') }}
+                        {{ $user->class_name }}
                     </div>
                 </div>
             </form>
@@ -62,9 +62,9 @@
             <form>
                 <div class="form-group">
                     <label for="photo">照片</label>
-                    <a href="{{ Auth::user()->getAvatar() }}" target="_blank" disabled>
-                        <img id="photo" class="img-thumbnail" src="{{ Auth::user()->getAvatar() }}" alt="photo"
-                             width="100%">
+                    <a href="{{ "http://jwc.jxnu.edu.cn/StudentPhoto/{$user->id}.jpg" }}" target="_blank" disabled>
+                        <img id="photo" class="img-thumbnail"
+                             src="{{ "http://jwc.jxnu.edu.cn/StudentPhoto/{$user->id}.jpg" }}" alt="photo" width="100%">
                     </a>
                 </div>
             </form>

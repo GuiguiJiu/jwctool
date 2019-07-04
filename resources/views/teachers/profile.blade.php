@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '个人信息')
+@section('title', '教师的个人信息')
 
 @section('container')
     <div class="row">
@@ -62,8 +62,8 @@
             <form>
                 <div class="form-group">
                     <label for="photo">照片</label>
-                    <a href="{{ Auth::user()->getAvatar() }}" target="_blank" disabled>
-                        <img id="photo" class="img-thumbnail" src="{{ Auth::user()->getAvatar() }}" alt="photo" width="100%">
+                    <a href="{{ $user->photo }}" target="_blank" disabled>
+                        <img id="photo" class="img-thumbnail" src="{{ $user->photo }}" alt="photo" width="100%">
                     </a>
                 </div>
             </form>
