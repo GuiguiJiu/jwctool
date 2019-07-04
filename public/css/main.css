@@ -1,0 +1,18 @@
+.navbar {
+    border-radius: 0;
+}
+a.navbar-brand {
+    padding: 5px 10px;
+}
+a.navbar-brand img {
+    height: 100%;
+}
+
+body > .container {
+    margin-bottom: 40px;
+}
+
+
+ul.nav.nav-tabs {
+    margin-bottom: 10px;
+}

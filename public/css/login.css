@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*color: #000;*/
+    height: 100vh; /**屏幕高度百分百*/
+    /*display: flex;*/
+    align-items: center;
+    justify-content: center;
+    background: #47759e; /* Old browsers */
+    background: -webkit-radial-gradient(center, ellipse cover, #BF7A6A 0%, #0b264e 100%); /* Chrome10+,Safari5.1+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #BF7A6A), color-stop(100%, #0b264e)); /* Chrome,Safari4+ */
+    background: -moz-radial-gradient(center, ellipse cover, #BF7A6A 0%, #0b264e 100%); /* FF3.6+ */
+    background: -o-radial-gradient(center, ellipse cover, #BF7A6A 0%, #0b264e 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, #BF7A6A 0%, #0b264e 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  #BF7A6A 0%,#0b264e 100%);
+    W3Cfilter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#BF7A6A', endColorstr='#0b264e', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+body > .container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+}
+
+.login-form {
+    padding: 25px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    width: 350px;
+    margin: 0 auto;
+}
+
+.checkbox.pull-right {
+    margin: 0;
+}
+
+.error-msg {
+    color: #f00;
+    font-size: 12px;
+}
