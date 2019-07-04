@@ -17,40 +17,44 @@
                 <!-- ID -->
                 <div class="form-group">
                     <label for="user-id">ID</label>
-                    <input type="text" class="form-control" id="user-id" name="uid"
-                           value="{{ Auth::id() }}" disabled>
+                    <div type="text" class="well well-sm" id="user-id" name="uid"
+                    >{{ Auth::id() }}
+                    </div>
                 </div>
                 <!-- 姓名 -->
                 <div class="form-group">
                     <label for="name">姓名</label>
-                    <input type="text" class="form-control" id="name" name="name"
-                           value="{{ Auth::user()->getInfo('name') }}" disabled>
+                    <div type="text" class="well well-sm" id="name" name="name"
+                    >{{ Auth::user()->getInfo('name') }}
+                    </div>
                 </div>
                 <!-- 性别 -->
                 <div class="form-group">
                     <label for="select">性别</label>
-                    <select class="form-control" id="gender" name="gender" disabled>
-                        <option value="m" {{ Auth::user()->getInfo('gender') == 'm' ? 'selected' : '' }}>男</option>
-                        <option value="f" {{ Auth::user()->getInfo('gender') == 'f' ? 'selected' : '' }}>女</option>
-                    </select>
+                    <div type="text" class="well well-sm" id="gender" name="gender">
+                        {{ Auth::user()->getInfo('gender') == 'm' ? '男' : '女' }}
+                    </div>
                 </div>
                 <!-- 学院 -->
                 <div class="form-group">
                     <label for="college">学院</label>
-                    <input type="text" class="form-control" id="college" name="college-name"
-                           value="{{ Auth::user()->getInfo('college_name') }}" disabled>
+                    <div type="text" class="well well-sm" id="college" name="college-name">
+                        {{ Auth::user()->getInfo('college_name') }}
+                    </div>
                 </div>
                 <!-- 专业 -->
                 <div class="form-group">
                     <label for="major">专业</label>
-                    <input type="text" class="form-control" id="major" name="major-name"
-                           value="{{ Auth::user()->getInfo('major_name') }}" disabled>
+                    <div type="text" class="well well-sm" id="major" name="major-name">
+                        {{ Auth::user()->getInfo('major_name') }}
+                    </div>
                 </div>
                 <!-- 班级 -->
                 <div class="form-group">
                     <label for="class">班级</label>
-                    <input type="text" class="form-control" id="class" name="class-name"
-                           value="{{ Auth::user()->getInfo('class_name') }}" disabled>
+                    <div type="text" class="well well-sm" id="class" name="class-name">
+                        {{ Auth::user()->getInfo('class_name') }}
+                    </div>
                 </div>
             </form>
         </div>
@@ -59,7 +63,8 @@
                 <div class="form-group">
                     <label for="photo">照片</label>
                     <a href="{{ Auth::user()->getAvatar() }}" target="_blank" disabled>
-                        <img id="photo" class="img-thumbnail" src="{{ Auth::user()->getAvatar() }}" alt="photo" width="100%">
+                        <img id="photo" class="img-thumbnail" src="{{ Auth::user()->getAvatar() }}" alt="photo"
+                             width="100%">
                     </a>
                 </div>
             </form>

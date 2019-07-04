@@ -16,6 +16,16 @@
             <div class="tab-content">
                 @foreach($all_terms_timetables as $index => $item)
                 <div role="tabpanel" class="tab-pane fade" id="{{ $item->year . $item->term }}">
+                    <div class="alert alert-success alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                        <strong>①</strong> 您当前已选课程为<strong class=""> 13 </strong>门.
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
+                                    aria-hidden="true">×</span></button>
+                        <strong>②</strong> 您当前所选课程总学分<strong class=""> 30 </strong>分.
+                    </div>
                     <div class="row">
                         @foreach($item->timetable as $key => $course)
                         <div class="col-sm-6 col-md-4">

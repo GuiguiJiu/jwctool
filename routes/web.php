@@ -55,6 +55,7 @@ Route::get('/edit', function () {
 //Route::get('/p2', function () {return view('p2');});
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/404', 'HomeController@error404')->name('error404');
 Route::get('/score-reports', 'Student\ScoreReportController@index')->name('score-reports');
 Route::get('/report-analyze', 'Student\ReportAnalyzeController@index')->name('report-analyze');
 Route::get('/timetable', 'Student\TimetableController@index')->name('timetable');
