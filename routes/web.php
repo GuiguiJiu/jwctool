@@ -39,6 +39,19 @@ Route::get('/profile', function () {
         ]);
     }
 });
+
+Route::get('/404', function (){
+    return view('404');
+})->name('error404');
+
+Route::get('/student/{uid}', function ($uid) {
+
+});
+
+Route::get('/teacher/{uid}', 'Teacher\TeacherController@index');
+Route::get('/student/{uid}', 'Student\StudentController@index');
+
+
 Route::get('/edit', function () {
     if(Auth::user()->type == 'Student')
         return view('students.profile-edit');
@@ -53,6 +66,7 @@ Route::get('/edit', function () {
 
 //Route::get('/p1', function () {return view('p1');});
 //Route::get('/p2', function () {return view('p2');});
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/score-reports', 'Student\ScoreReportController@index')->name('score-reports');

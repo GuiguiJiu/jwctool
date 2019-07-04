@@ -18,39 +18,42 @@
                 <div class="form-group">
                     <label for="user-id">ID</label>
                     <input type="text" class="form-control" id="user-id" name="uid"
-                           value="{{ Auth::id() }}" disabled>
+                           value="{{ $user->id }}" disabled>
                 </div>
                 <!-- 姓名 -->
                 <div class="form-group">
                     <label for="name">姓名</label>
                     <input type="text" class="form-control" id="name" name="name"
-                           value="{{ Auth::user()->getInfo('name') }}" disabled>
+                           value="{{ $user->name }}" disabled>
                 </div>
                 <!-- 性别 -->
                 <div class="form-group">
                     <label for="select">性别</label>
                     <select class="form-control" id="gender" name="gender" disabled>
-                        <option value="m" {{ Auth::user()->getInfo('gender') == 'm' ? 'selected' : '' }}>男</option>
-                        <option value="f" {{ Auth::user()->getInfo('gender') == 'f' ? 'selected' : '' }}>女</option>
+                        @if($user->gender == 'm')
+                        <option value="m" selected>男</option>
+                        @else
+                        <option value="f" selected>女</option>
+                        @endif
                     </select>
                 </div>
                 <!-- 学院 -->
                 <div class="form-group">
                     <label for="college">学院</label>
                     <input type="text" class="form-control" id="college" name="college-name"
-                           value="{{ Auth::user()->getInfo('college_name') }}" disabled>
+                           value="{{ $user->college_name }}" disabled>
                 </div>
                 <!-- 专业 -->
                 <div class="form-group">
                     <label for="major">专业</label>
                     <input type="text" class="form-control" id="major" name="major-name"
-                           value="{{ Auth::user()->getInfo('major_name') }}" disabled>
+                           value="{{ $user->major_name }}" disabled>
                 </div>
                 <!-- 班级 -->
                 <div class="form-group">
                     <label for="class">班级</label>
                     <input type="text" class="form-control" id="class" name="class-name"
-                           value="{{ Auth::user()->getInfo('class_name') }}" disabled>
+                           value="{{ $user->class_name }}" disabled>
                 </div>
             </form>
         </div>
@@ -58,8 +61,8 @@
             <form>
                 <div class="form-group">
                     <label for="photo">照片</label>
-                    <a href="{{ Auth::user()->getAvatar() }}" target="_blank" disabled>
-                        <img id="photo" class="img-thumbnail" src="{{ Auth::user()->getAvatar() }}" alt="photo" width="100%">
+                    <a href="{{ "http://jwc.jxnu.edu.cn/StudentPhoto/{$user->id}.jpg" }}" target="_blank" disabled>
+                        <img id="photo" class="img-thumbnail" src="{{ "http://jwc.jxnu.edu.cn/StudentPhoto/{$user->id}.jpg" }}" alt="photo" width="100%">
                     </a>
                 </div>
             </form>
